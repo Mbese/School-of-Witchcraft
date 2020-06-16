@@ -1,4 +1,4 @@
-package com.example.hogwarts.view
+package com.example.hogwarts.houses.view
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,11 +8,10 @@ import android.widget.TextView
 import androidx.annotation.VisibleForTesting
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hogwarts.R
-import com.example.hogwarts.model.House
+import com.example.hogwarts.houses.data.House
 import com.example.hogwarts.widgets.ExpandableView
 
-class HousesAdapter (
-    private val context: Context,
+class HousesAdapter(
     private val houses: ArrayList<House>
 ) : RecyclerView.Adapter<HousesAdapter.MyViewHolder>() {
 

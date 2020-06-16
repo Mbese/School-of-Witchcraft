@@ -1,6 +1,7 @@
-package com.example.hogwarts.service
+package com.example.hogwarts.api
 
-import com.example.hogwarts.constants.Constants.Companion.base_url
+import com.example.hogwarts.constants.BASE_URL
+import com.example.hogwarts.houses.service.GetHousesService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -9,7 +10,7 @@ class ApiClient {
         fun getRetrofitInstance(): Retrofit.Builder {
             return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(base_url)
+                .baseUrl(BASE_URL)
         }
 
         fun getHousesService(): GetHousesService {

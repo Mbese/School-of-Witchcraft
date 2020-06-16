@@ -1,6 +1,6 @@
-package com.example.hogwarts.service
+package com.example.hogwarts.houses.service
 
-import com.example.hogwarts.model.House
+import com.example.hogwarts.houses.data.House
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

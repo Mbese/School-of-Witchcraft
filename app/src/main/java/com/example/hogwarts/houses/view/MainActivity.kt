@@ -1,21 +1,21 @@
-package com.example.hogwarts.view
+package com.example.hogwarts.houses.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hogwarts.R
-import com.example.hogwarts.model.House
-import com.example.hogwarts.viewmodel.MainActivityViewModel
+import com.example.hogwarts.houses.data.House
+import com.example.hogwarts.houses.viewmodel.MainActivityViewModel
+import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: MainActivityViewModel
+    private val viewModel by inject<MainActivityViewModel>()
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: HousesAdapter
     private lateinit var houseList: ArrayList<House>
@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
         progressBar = findViewById(R.id.progressBar)
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
@@ -35,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.itemAnimator = DefaultItemAnimator()
         houseList = ArrayList()
 
-        adapter = HousesAdapter(this, houseList)
+        adapter = HousesAdapter(houseList)
 
         recyclerView.adapter = adapter
 
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showHouses() {
-        viewModel.houses?.observe(this, Observer {
+        viewModel.houses.observe(this, Observer {
             progressBar.visibility = View.GONE
             it?.let { it1 -> houseList.addAll(it1) }
             adapter.notifyDataSetChanged()
