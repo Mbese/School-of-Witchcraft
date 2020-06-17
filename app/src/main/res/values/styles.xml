@@ -7,4 +7,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Button.Outline" parent="Theme.AppCompat">
+        <item name="android:background">@drawable/outline_button_background</item>
+        <item name="android:textColor">@color/white_color</item>
+    </style>
+
 </resources>

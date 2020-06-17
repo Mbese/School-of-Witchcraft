@@ -16,7 +16,11 @@ class App : Application() {
                     repoModule,
                     persistenceModule,
                     apiModule,
-                    retrofitModule
+                    retrofitModule,
+                    characterRepoModule,
+                    charactersViewModelModule,
+                    spellsRepoModule,
+                    spellsViewModelModule
                 ))
             }
         }

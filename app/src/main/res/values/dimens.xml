@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="default_padding">12dp</dimen>
+    <dimen name="default_padding_12dp">12dp</dimen>
     <dimen name="medium_font">16sp</dimen>
     <dimen name="default_padding_2x">16dp</dimen>
+    <dimen name="rounded_corner_btn_radius">4dp</dimen>
+    <dimen name="btn_border_radius">1dp</dimen>
+    <dimen name="small_font">14sp</dimen>
+    <dimen name="button_width">300dp</dimen>
+    <dimen name="button_height">58dp</dimen>
+    <dimen name="large_font">32sp</dimen>
+    <dimen name="default_padding">8dp</dimen>
+    <dimen name="section_padding">4dp</dimen>
+    <dimen name="house_btn_width">200dp</dimen>
+    <dimen name="house_btn_height">40dp</dimen>
 </resources>

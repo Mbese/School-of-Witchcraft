@@ -1,43 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/mascot"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/head_of_house"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_padding"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mascot" />
+        android:layout_marginTop="@dimen/default_padding_12dp" />
 
     <TextView
         android:id="@+id/house_ghost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_padding"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/head_of_house" />
+        android:layout_marginTop="@dimen/default_padding_12dp" />
 
-    <TextView
-        android:id="@+id/founder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="@dimen/house_btn_width"
+        android:layout_height="@dimen/house_btn_height"
+        android:layout_gravity="end"
         android:layout_marginTop="@dimen/default_padding"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/house_ghost" />
+        android:background="@drawable/outline_button_background"
+        android:text="@string/see_characters"
+        android:textColor="@color/white_color"
+        android:textSize="@dimen/medium_font" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -1,35 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/default_padding"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/expandable_view_section_background"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:background="@drawable/expandable_view_section_background"
-        android:paddingBottom="@dimen/default_padding"
-        android:paddingTop="@dimen/default_padding">
+        android:paddingTop="@dimen/default_padding_12dp"
+        android:paddingBottom="@dimen/default_padding_12dp">
 
         <ImageView
+            android:id="@+id/left_drawable_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_baseline_house_24"
-            android:layout_marginEnd="@dimen/default_padding_2x"/>
+            android:layout_marginEnd="@dimen/default_padding_2x" />
 
-        <TextView
-            android:id="@+id/title"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/white_color"
-            android:textSize="@dimen/medium_font"
-            tools:text="First House" />
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/white_color"
+                android:textSize="@dimen/medium_font"
+                tools:text="First House" />
+
+            <TextView
+                android:id="@+id/sub_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_color"
+                android:textSize="@dimen/small_font"
+                tools:text="First House" />
+
+        </LinearLayout>
 
         <ImageButton
             android:id="@+id/right_chevron"
@@ -45,12 +62,12 @@
         android:id="@+id/expanding_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/default_padding_2x"
-        android:paddingEnd="@dimen/default_padding_2x"
-        android:paddingTop="@dimen/default_padding"
-        android:paddingBottom="@dimen/default_padding"
+        android:background="#047AAB"
         android:orientation="vertical"
-        android:visibility="gone"
-        android:background="@drawable/expanding_view_background" />
+        android:paddingStart="@dimen/default_padding_2x"
+        android:paddingTop="@dimen/default_padding_12dp"
+        android:paddingEnd="@dimen/default_padding_2x"
+        android:paddingBottom="@dimen/default_padding_12dp"
+        android:visibility="gone" />
 
 </LinearLayout>

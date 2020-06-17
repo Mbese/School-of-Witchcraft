@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="ExpandableViewWidget">
         <attr name="title_text" format="string" />
+        <attr name="sub_title_text" format="string" />
         <attr name="description_text" format="string" />
         <attr name="expanded_view" format="string" />
         <attr name="chevron_src" format="reference" />
@@ -12,6 +13,7 @@
         <attr name="titleTextSize" format="dimension" />
         <attr name="descriptionTextSize" format="dimension" />
         <attr name="descriptionMaxLines" format="integer" />
+        <attr name="leftDrawableIcon" format="reference"/>
         <attr name="dividerLineVisibility">
             <flag name="invisible" value="0x00000004" />
             <flag name="visible" value="0x00000000" />

@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Hogwarts</string>
+    <string name="see_characters">See Characters</string>
+    <string name="show_students_only">Show Students Only</string>
+    <string name="mascot_prefix">Mascot : %1$s</string>
+    <string name="head_of_house_prefix">Head of House : %1$s</string>
+    <string name="house_ghost_prefix">House Ghost : %1$s</string>
+    <string name="species_prefix">Species : %1$s</string>
+    <string name="blood_status_prefix">Blood Status : %1$s</string>
+    <string name="characters_screen_title">Characters</string>
+    <string name="houses">Houses</string>
+    <string name="students_registry">Students Registry</string>
+    <string name="spells_registry">Spells Registry</string>
+    <string name="spells_activity_title">Spells</string>
+    <string name="spell_type_prefix">Spell Type : %1$s</string>
+    <string name="spell_effect_prefix">Spell Effect : %1$s</string>
+    <string name="students_screen_title">Students</string>
+    <string name="keyword_student">student</string>
 </resources>

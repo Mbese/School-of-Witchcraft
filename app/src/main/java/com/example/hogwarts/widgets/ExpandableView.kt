@@ -6,17 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateDecelerateInterpolator
-import android.widget.FrameLayout
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
+import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import com.example.hogwarts.R
 
 class ExpandableView : FrameLayout {
     private var titleTextView: TextView
+    private var subTitleTextView: TextView
     private var expandingView: LinearLayout
     private var rightChevronImageButton: ImageButton
+    private var leftDrawableIconImageView: ImageView
     private var itemSelectedListener: ((String) -> Unit)? = null
 
     constructor(context: Context) : this(context, null)
@@ -27,8 +27,10 @@ class ExpandableView : FrameLayout {
         val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.ExpandableViewWidget, defStyleAttr, 0)
 
         titleTextView = rootView.findViewById(R.id.title)
+        subTitleTextView = rootView.findViewById(R.id.sub_title)
         expandingView = rootView.findViewById(R.id.expanding_view)
         rightChevronImageButton = rootView.findViewById(R.id.right_chevron)
+        leftDrawableIconImageView = rootView.findViewById(R.id.left_drawable_icon)
 
         try {
             rightChevronImageButton.setImageDrawable(if (typedArray.getDrawable(R.styleable.ExpandableViewWidget_chevron_src)  != null) {
@@ -36,7 +38,9 @@ class ExpandableView : FrameLayout {
             } else {
                 ContextCompat.getDrawable(context, R.drawable.ic_baseline_keyboard_arrow_down_24)
             })
+            leftDrawableIconImageView.setImageDrawable(typedArray.getDrawable(R.styleable.ExpandableViewWidget_leftDrawableIcon))
             titleTextView.text = typedArray.getString(R.styleable.ExpandableViewWidget_title_text)
+            subTitleTextView.text = typedArray.getString(R.styleable.ExpandableViewWidget_sub_title_text)
         } finally {
             typedArray.recycle()
         }
@@ -70,6 +74,14 @@ class ExpandableView : FrameLayout {
 
     fun setTitleText(titleText: String) {
         titleTextView.text = titleText
+    }
+
+    fun setSubTitleText(subTitle: String) {
+        subTitleTextView.text = subTitle
+    }
+
+    fun setLeftIcon(@DrawableRes icon: Int){
+        leftDrawableIconImageView.setImageResource(icon)
     }
 
     fun toggle() {
