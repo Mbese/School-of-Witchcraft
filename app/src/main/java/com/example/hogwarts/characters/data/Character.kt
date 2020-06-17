@@ -18,6 +18,4 @@ data class Character(
     @field:SerializedName("deathEater") val deathEater: Boolean,
     @field:SerializedName("bloodStatus") val bloodStatus: String,
     @field:SerializedName("species") val species: String
-) {
-    override fun toString() = name
-}
+)
