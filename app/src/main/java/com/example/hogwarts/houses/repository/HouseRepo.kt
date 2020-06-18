@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class HouseRepo (
+class HouseRepo(
     private val dao: HouseDao,
     private val apiService: GetHousesService = ApiClient.getHousesService()
 ) {
@@ -25,7 +25,9 @@ class HouseRepo (
 
     init {
         CoroutineScope(Dispatchers.IO + handler).launch {
-            getHouses()
+            kotlin.runCatching {
+                getHouses()
+            }
         }
     }
 
@@ -39,7 +41,6 @@ class HouseRepo (
                 dao.insertAll(housesData)
             }
         } else {
-            Log.e("Repo", "Fetching from database")
             houses.postValue(housesData)
         }
     }

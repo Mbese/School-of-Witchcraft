@@ -15,7 +15,7 @@ data class House(
     @field:SerializedName("houseGhost") val houseGhost: String,
     @field:SerializedName("founder") val founder: String,
     @field:SerializedName("__v") val __v: Int,
-    @field:SerializedName("school") val school: String,
+    @field:SerializedName("school") val school: String?,
     @Embedded val members: ArrayList<String>,
     @Embedded val values: ArrayList<String>,
     @Embedded val colors: ArrayList<String>

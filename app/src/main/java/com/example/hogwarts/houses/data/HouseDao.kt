@@ -1,10 +1,7 @@
 package com.example.hogwarts.houses.data
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface HouseDao {
@@ -12,5 +9,5 @@ interface HouseDao {
     fun getHouses() : LiveData<List<House>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(houses: List<House>)
+    suspend fun insertAll(houses: List<House>)
 }
